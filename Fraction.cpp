@@ -22,7 +22,7 @@ using namespace std;
     }
 
     //Сумма
-    Fraction Fraction::Summa(Fraction fract2)
+    Fraction Fraction::operator+(const Fraction& fract2)
     {
         Fraction res;
         res.numerator = this->numerator * fract2.denominator + fract2.numerator * this->denominator;
@@ -32,7 +32,7 @@ using namespace std;
     }
 
     //Вычитание
-    Fraction Fraction::Subtraction(Fraction fract2)
+    Fraction Fraction::operator-(const Fraction& fract2)
     {
         Fraction res;
         res.numerator = this->numerator * fract2.denominator - fract2.numerator * this->denominator;
@@ -42,7 +42,7 @@ using namespace std;
     }
 
     //Умножение
-    Fraction Fraction::Multiplication(Fraction fract2)
+    Fraction Fraction::operator*(const Fraction& fract2)
     {
         Fraction res;
         res.numerator = this->numerator * fract2.numerator;
@@ -52,7 +52,7 @@ using namespace std;
     }
 
     //Деление
-    Fraction Fraction::Division(Fraction fract2)
+    Fraction Fraction::operator/(const Fraction& fract2)
     {
         Fraction res;
         res.numerator = this->numerator * fract2.denominator;
@@ -82,28 +82,28 @@ using namespace std;
             {
             case 1:
             {
-                Fraction result = fract1.Summa(fract2);
+                Fraction result = fract1+fract2;
                 cout << "Новая дробь: " << endl;
                 result.print();
                 break;
             }
             case 2:
             {
-                Fraction result = fract1.Subtraction(fract2);
+                Fraction result = fract1-fract2;
                 cout << "Новая дробь: " << endl;
                 result.print();
                 break;
             }
             case 3:
             {
-                Fraction result = fract1.Multiplication(fract2); 
+                Fraction result = fract1*fract2; 
                 cout << "Новая дробь: " << endl;
                 result.print();
                 break;
             }
             case 4:
             {
-                Fraction result = fract1.Division(fract2); 
+                Fraction result = fract1/fract2; 
                 cout << "Новая дробь: " << endl;
                 result.print();
                 break;
